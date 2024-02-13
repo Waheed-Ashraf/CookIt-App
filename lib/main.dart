@@ -1,5 +1,5 @@
+import 'package:cook_it_app/Core/theme/app_theme.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/home_view.dart';
-import 'package:cook_it_app/constent.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,9 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        scaffoldBackgroundColor: kBackgroundColor,
-      ),
+      theme: lightMood,
       home: const HomeView(),
     );
   }

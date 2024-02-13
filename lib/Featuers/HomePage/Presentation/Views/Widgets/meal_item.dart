@@ -15,55 +15,49 @@ class MealItem extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(4, 8, 0, 8),
       child: Card(
         elevation: 3,
-        child: Container(
-          decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                  colors: [kPrimaryColor, Colors.white],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight),
-              borderRadius: BorderRadius.all(Radius.circular(16))),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Stack(
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(16),
-                    child: Image.asset(
-                      AssetsData.testImage,
-                      width: 150,
-                    ),
+        color: Theme.of(context).colorScheme.primary,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Stack(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(16),
+                  child: Image.asset(
+                    AssetsData.testImage,
+                    width: 150,
                   ),
-                  const Positioned(child: BookMarkWidget()),
-                ],
-              ),
-              const SizedBox(
-                height: 8,
-              ),
-              const Padding(
-                padding: EdgeInsets.only(left: 8),
-                child: Text(
-                  'Passta',
-                  style: Styles.textStyle18,
+                ),
+                const Positioned(right: 0, child: BookMarkWidget()),
+              ],
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 8),
+              child: Text(
+                'Passta',
+                style: Styles.textStyle16.copyWith(
+                  color: Theme.of(context).colorScheme.inversePrimary,
                 ),
               ),
-              const Divider(
-                height: 8,
-                thickness: .7,
-              ),
-              const Padding(
-                padding: EdgeInsets.only(left: 8),
-                child: Text(
-                  'Cat : Nesha',
-                  style: Styles.textStyle18,
+            ),
+            const Divider(
+              height: 8,
+              thickness: .7,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 8),
+              child: Text(
+                'Cat : Nesha',
+                style: Styles.textStyle16.copyWith(
+                  color: Theme.of(context).colorScheme.inversePrimary,
                 ),
               ),
-              const SizedBox(
-                height: 8,
-              )
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

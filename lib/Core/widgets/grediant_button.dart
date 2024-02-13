@@ -9,15 +9,15 @@ class GradientButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const primaryColor = kPrimaryColor;
-    const secondaryColor = Colors.white;
+    Color primaryColor = Theme.of(context).colorScheme.secondary;
+    Color secondaryColor = Colors.white;
 
     const double borderRadius = 16;
 
     return DecoratedBox(
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(borderRadius),
-          gradient: const LinearGradient(
+          gradient: LinearGradient(
               colors: [secondaryColor, primaryColor],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter)),

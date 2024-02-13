@@ -28,9 +28,9 @@ class HomeView extends StatelessWidget {
                 pagination: SwiperPagination(
                   margin: EdgeInsets.only(
                       top: MediaQuery.of(context).size.height * .57),
-                  builder: const DotSwiperPaginationBuilder(
+                  builder: DotSwiperPaginationBuilder(
                     color: kDotsColor,
-                    activeColor: kPrimaryColor,
+                    activeColor: Theme.of(context).colorScheme.secondary,
                   ),
                 ),
                 itemBuilder: (context, index) {
@@ -39,11 +39,13 @@ class HomeView extends StatelessWidget {
             const SizedBox(
               height: 16,
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 16),
+            Padding(
+              padding: const EdgeInsets.only(left: 16),
               child: Text(
                 'Egyption Food',
-                style: Styles.textStyle18,
+                style: Styles.textStyle18.copyWith(
+                  color: Theme.of(context).colorScheme.inversePrimary,
+                ),
               ),
             ),
             const EgyptionFoodList(),

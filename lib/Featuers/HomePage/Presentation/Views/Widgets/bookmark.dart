@@ -14,9 +14,10 @@ class BookMarkWidget extends StatelessWidget {
       child: IconButton(
           padding: EdgeInsets.zero,
           onPressed: () {},
-          icon: const Icon(
+          icon: Icon(
             Icons.bookmark_add,
             size: 20,
+            color: Theme.of(context).colorScheme.secondary,
           )),
     );
   }
