@@ -32,6 +32,7 @@ dependencies:
   card_swiper: ^3.0.1
   carousel_slider: ^4.2.1
   cupertino_icons: ^1.0.6
+  dartz: ^0.10.1
   dio: ^5.4.0
   flutter:
     sdk: flutter
