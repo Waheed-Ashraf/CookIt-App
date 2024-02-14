@@ -1,5 +1,6 @@
 import 'package:cook_it_app/Core/utils/service_locator.dart';
 import 'package:cook_it_app/Core/utils/text_style.dart';
+import 'package:cook_it_app/Featuers/HomePage/Presentation/Manager/EgyptionFood/egyption_food_cubit.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Manager/FeaturedMealsCubit/featured_meals_cubit.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/Widgets/egyption_food_List.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/Widgets/featured_meals_swiper.dart';
@@ -17,27 +18,22 @@ class HomeViewBody extends StatelessWidget {
             create: (context) =>
                 getIt<FeaturedMealsCubit>()..getFeaturedMeals(),
           ),
+          BlocProvider(
+            create: (context) =>
+                getIt<EgyptionFoodCubit>()..getEgyptionFoodList(),
+          ),
         ],
-        child: SafeArea(
+        child: const SafeArea(
             child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
+          physics: BouncingScrollPhysics(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const FeaturedMealSwiper(),
-              const SizedBox(
+              FeaturedMealSwiper(),
+              SizedBox(
                 height: 16,
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 16),
-                child: Text(
-                  'Egyption Food',
-                  style: Styles.textStyle18.copyWith(
-                    color: Theme.of(context).colorScheme.inversePrimary,
-                  ),
-                ),
-              ),
-              const EgyptionFoodList(),
+              EgyptionFoodList(),
             ],
           ),
         )));

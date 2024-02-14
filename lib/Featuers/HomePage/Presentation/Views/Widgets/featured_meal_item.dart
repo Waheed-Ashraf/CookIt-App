@@ -3,6 +3,7 @@ import 'package:cook_it_app/Core/utils/text_style.dart';
 import 'package:cook_it_app/Featuers/HomePage/Data/Models/meal_model.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/Widgets/bookmark.dart';
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 
 class FeaturedMealItem extends StatelessWidget {
   final MealsModel mealsModel;
@@ -27,8 +28,21 @@ class FeaturedMealItem extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(16),
                 child: CachedNetworkImage(
+                  height: 227,
                   imageUrl: mealsModel.strMealThumb!,
                   fit: BoxFit.cover,
+                  placeholder: (context, url) => Shimmer.fromColors(
+                    baseColor: Colors.grey[850]!,
+                    highlightColor: Colors.grey[800]!,
+                    child: Container(
+                      height: 227,
+                      width: 235,
+                      decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(16.0),
+                      ),
+                    ),
+                  ),
                 ),
               ),
               const Positioned(right: 0, child: BookMarkWidget()),
@@ -41,6 +55,7 @@ class FeaturedMealItem extends StatelessWidget {
             padding: const EdgeInsets.only(left: 16),
             child: Text(
               mealsModel.strMeal,
+              maxLines: 1,
               style: Styles.textStyle16.copyWith(
                   color: Theme.of(context).colorScheme.inversePrimary),
             ),
