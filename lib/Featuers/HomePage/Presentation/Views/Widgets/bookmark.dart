@@ -15,7 +15,7 @@ class BookMarkWidget extends StatelessWidget {
           padding: EdgeInsets.zero,
           onPressed: () {},
           icon: Icon(
-            Icons.bookmark_add,
+            Icons.favorite,
             size: 20,
             color: Theme.of(context).colorScheme.secondary,
           )),

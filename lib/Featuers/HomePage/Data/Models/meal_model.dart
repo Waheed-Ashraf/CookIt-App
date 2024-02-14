@@ -1,4 +1,6 @@
-class MealsModel {
+import 'package:equatable/equatable.dart';
+
+class MealsModel extends Equatable {
   String idMeal;
   String strMeal;
   String? strCategory;
@@ -28,4 +30,15 @@ class MealsModel {
       strYoutube: json['strYoutube'],
     );
   }
+
+  @override
+  List<Object?> get props => [
+        idMeal,
+        strMeal,
+        strCategory,
+        strArea,
+        strInstructions,
+        strMealThumb,
+        strYoutube,
+      ];
 }

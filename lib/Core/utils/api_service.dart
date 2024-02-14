@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 class ApiService {
   final Dio _dio;
 
-  String baseUrl = 'www.themealdb.com/api/json/v1/1/';
+  String baseUrl = 'http://www.themealdb.com/api/json/v1/1/';
 
   ApiService(this._dio);
 

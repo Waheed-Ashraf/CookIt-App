@@ -29,13 +29,16 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   animate_do: ^3.3.3
+  cached_network_image: ^3.3.1
   card_swiper: ^3.0.1
   carousel_slider: ^4.2.1
   cupertino_icons: ^1.0.6
   dartz: ^0.10.1
   dio: ^5.4.0
+  equatable: ^2.0.5
   flutter:
     sdk: flutter
+  flutter_bloc: ^8.1.4
   get_it: ^7.6.7
   google_nav_bar: ^5.0.6
   url_launcher: ^6.2.4
