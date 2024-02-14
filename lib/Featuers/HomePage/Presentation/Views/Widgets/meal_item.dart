@@ -1,7 +1,6 @@
 import 'package:cook_it_app/Core/utils/assets_data.dart';
 import 'package:cook_it_app/Core/utils/text_style.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/Widgets/bookmark.dart';
-import 'package:cook_it_app/constent.dart';
 import 'package:flutter/material.dart';
 
 class MealItem extends StatelessWidget {
@@ -14,6 +13,9 @@ class MealItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.fromLTRB(4, 8, 0, 8),
       child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+        ),
         elevation: 3,
         color: Theme.of(context).colorScheme.primary,
         child: Column(

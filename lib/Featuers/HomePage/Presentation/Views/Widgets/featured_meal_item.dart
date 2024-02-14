@@ -11,6 +11,9 @@ class FeaturedMealItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16.0),
+      ),
       elevation: 6,
       color: Theme.of(context).colorScheme.primary,
       child: Column(
