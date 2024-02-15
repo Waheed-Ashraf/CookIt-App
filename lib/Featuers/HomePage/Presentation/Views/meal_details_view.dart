@@ -3,7 +3,6 @@ import 'package:cook_it_app/Featuers/HomePage/Presentation/Manager/MealDetailsCu
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/Widgets/all_meals_detail.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/Widgets/sliver_appbar_section.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MealDetailsView extends StatelessWidget {
@@ -16,9 +15,10 @@ class MealDetailsView extends StatelessWidget {
       create: (context) => getIt<MealDetailsCubit>()..getMealDetail(mealId),
       child: Scaffold(
           body: CustomScrollView(
+        physics: const BouncingScrollPhysics(),
         slivers: [
           SliverAppBar(
-            pinned: true,
+            pinned: false,
             expandedHeight: MediaQuery.of(context).size.height * .463,
             flexibleSpace:
                 const FlexibleSpaceBar(background: SliverAppBarSection()),

@@ -3,6 +3,7 @@ import 'package:cook_it_app/Core/widgets/custom_error_widget.dart';
 import 'package:cook_it_app/Core/widgets/custom_loading_indicator.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Manager/FeaturedMealsCubit/featured_meals_cubit.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/Widgets/featured_meal_item.dart';
+import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/meal_details_view.dart';
 import 'package:cook_it_app/constent.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -28,8 +29,19 @@ class FeaturedMealSwiper extends StatelessWidget {
                 ),
               ),
               itemBuilder: (context, index) {
-                return FeaturedMealItem(
-                  mealsModel: state.featuredMealsList[index],
+                return InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => MealDetailsView(
+                          mealId: state.featuredMealsList[index].idMeal,
+                        ),
+                      ),
+                    );
+                  },
+                  child: FeaturedMealItem(
+                    mealsModel: state.featuredMealsList[index],
+                  ),
                 );
               });
         } else if (state is FeaturedMealsError) {

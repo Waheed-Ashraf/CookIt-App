@@ -1,8 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cook_it_app/Core/utils/app_router.dart';
 import 'package:cook_it_app/Core/utils/text_style.dart';
 import 'package:cook_it_app/Featuers/HomePage/Data/Models/meal_model.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/Widgets/bookmark.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shimmer/shimmer.dart';
 
 class MealItem extends StatelessWidget {
@@ -52,7 +55,7 @@ class MealItem extends StatelessWidget {
               ],
             ),
             const SizedBox(
-              height: 8,
+              height: 14,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 8),
@@ -64,9 +67,13 @@ class MealItem extends StatelessWidget {
                 ),
               ),
             ),
-            const Divider(
-              height: 10,
-              thickness: .7,
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 6),
+              child: Container(
+                width: 150,
+                height: 1,
+                color: Colors.grey,
+              ),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 8),

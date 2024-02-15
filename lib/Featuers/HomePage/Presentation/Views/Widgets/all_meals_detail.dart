@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:cook_it_app/Core/utils/text_style.dart';
 import 'package:cook_it_app/Core/widgets/custom_error_widget.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Manager/MealDetailsCubit/meal_details_cubit.dart';
+import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/Widgets/youtube_video.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -75,6 +76,11 @@ class AllMealDetails extends StatelessWidget {
                       color: Theme.of(context).colorScheme.inversePrimary,
                     ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8),
+                    child: YoutubeVideoPlayer(
+                        mealVideoUrl: state.mealDetails.strYoutube!),
+                  )
                 ],
               ),
             ),
