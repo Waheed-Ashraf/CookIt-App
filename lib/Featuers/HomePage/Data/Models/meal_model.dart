@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 
 class MealsModel extends Equatable {
   String idMeal;
@@ -24,7 +23,7 @@ class MealsModel extends Equatable {
     return MealsModel(
       idMeal: json['idMeal'],
       strMeal: json['strMeal'] ?? 'UnKnown',
-      strCategory: json['strCategory'] ?? 'UnKnown',
+      strCategory: json['strCategory'] ?? 'Unknown',
       strArea: json['strArea'],
       strInstructions: json['strInstructions'],
       strMealThumb: json['strMealThumb'],

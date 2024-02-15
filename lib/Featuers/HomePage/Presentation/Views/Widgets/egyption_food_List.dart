@@ -1,10 +1,13 @@
 import 'package:animate_do/animate_do.dart';
+import 'package:cook_it_app/Core/utils/app_router.dart';
 import 'package:cook_it_app/Core/utils/text_style.dart';
 import 'package:cook_it_app/Core/widgets/custom_error_widget.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Manager/EgyptionFood/egyption_food_cubit.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/Widgets/meal_item.dart';
+import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/meal_details_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class EgyptionFoodList extends StatelessWidget {
   const EgyptionFoodList({super.key});
@@ -62,8 +65,19 @@ class EgyptionFoodList extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     itemCount: 6,
                     itemBuilder: (context, index) {
-                      return MealItem(
-                        mealsModel: state.egyptionMealsList[index],
+                      return InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => MealDetailsView(
+                                  mealId:
+                                      state.egyptionMealsList[index].idMeal),
+                            ),
+                          );
+                        },
+                        child: MealItem(
+                          mealsModel: state.egyptionMealsList[index],
+                        ),
                       );
                     }),
               ),

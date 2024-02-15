@@ -1,4 +1,3 @@
-// ignore: file_names
 import 'package:dio/dio.dart';
 
 abstract class Failure {

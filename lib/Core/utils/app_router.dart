@@ -1,32 +1,31 @@
-
+// import 'package:cook_it_app/Core/utils/service_locator.dart';
+// import 'package:cook_it_app/Featuers/HomePage/Presentation/Manager/MealDetailsCubit/meal_details_cubit.dart';
+// import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/home_view.dart';
+// import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/meal_details_view.dart';
+// import 'package:flutter_bloc/flutter_bloc.dart';
+// import 'package:go_router/go_router.dart';
 
 // abstract class AppRouter {
 //   static const kHomeView = '/homeView';
-//   static const kBookDetailsView = '/bookDetailsView';
-//   static const kSearchView = '/searchView';
+//   static const kMealDetailsView = '/mealDetailsView';
 
 //   static final router = GoRouter(
 //     routes: [
+//       // GoRoute(
+//       //   path: '/',
+//       //   builder: (context, state) => const SplashView(),
+//       // ),
+
 //       GoRoute(
 //         path: '/',
-//         builder: (context, state) => const SplashView(),
-//       ),
-//       GoRoute(
-//         path: kSearchView,
-//         builder: (context, state) => const SearchView(),
-//       ),
-//       GoRoute(
-//         path: kHomeView,
 //         builder: (context, state) => const HomeView(),
 //       ),
 //       GoRoute(
-//         path: kBookDetailsView,
+//         path: kMealDetailsView,
 //         builder: (context, state) => BlocProvider(
-//           create: (context) => SimillarBooksCubit(
-//             getIt.get<HomeRepoimp>(),
-//           ),
-//           child: BookDetailsView(
-//             bookModel: state.extra as BookItemModel,
+//           create: (context) => getIt<MealDetailsCubit>(),
+//           child: MealDetailsView(
+//             mealId: state.extra as String,
 //           ),
 //         ),
 //       ),

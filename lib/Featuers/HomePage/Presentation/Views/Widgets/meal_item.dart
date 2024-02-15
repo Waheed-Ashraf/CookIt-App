@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cook_it_app/Core/utils/text_style.dart';
-import 'package:animate_do/animate_do.dart';
 import 'package:cook_it_app/Featuers/HomePage/Data/Models/meal_model.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/Widgets/bookmark.dart';
 import 'package:flutter/material.dart';

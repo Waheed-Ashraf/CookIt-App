@@ -9,7 +9,9 @@ class CustomErrorWidget extends StatelessWidget {
     return Center(
       child: Text(
         errMessage,
-        style: Styles.textStyle18,
+        style: Styles.textStyle18.copyWith(
+          color: Theme.of(context).colorScheme.inversePrimary,
+        ),
         textAlign: TextAlign.center,
       ),
     );
