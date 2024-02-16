@@ -7,4 +7,5 @@ abstract class Repo {
   Future<Either<Failure, List<MealsModel>>> getEgyptianMeals(
       String countryName);
   Future<Either<Failure, MealsModel>> getMealDetails(String mealId);
+  Future<Either<Failure, List<MealsModel>>> getCountriesNames();
 }

@@ -64,4 +64,23 @@ class RepoImp implements Repo {
       }
     }
   }
+
+  @override
+  Future<Either<Failure, List<MealsModel>>> getCountriesNames() async {
+    try {
+      var response = await apiService.get(endPoint: 'list.php?a=list');
+
+      List<MealsModel> countriesNameList = [];
+      for (var element in response['meals']) {
+        countriesNameList.add(MealsModel.fromJson(element));
+      }
+      return right(countriesNameList);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      } else {
+        return left(ServerFailure(e.toString()));
+      }
+    }
+  }
 }
