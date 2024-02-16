@@ -20,7 +20,7 @@ class _YoutubeVideoPlayerState extends State<YoutubeVideoPlayer> {
   void initState() {
     super.initState();
     isMute = false;
-    id = YoutubePlayer.convertUrlToId(url)!;
+    id = YoutubePlayer.convertUrlToId(url) ?? '';
     _controller = YoutubePlayerController(
       initialVideoId: id,
       flags: const YoutubePlayerFlags(autoPlay: false),
@@ -51,10 +51,10 @@ class _YoutubeVideoPlayerState extends State<YoutubeVideoPlayer> {
       children: [
         IconButton(
           onPressed: () {
-            if (_controller.value.position <= Duration(seconds: 10)) {
-              _controller.seekTo(Duration(seconds: 0));
+            if (_controller.value.position <= const Duration(seconds: 10)) {
+              _controller.seekTo(const Duration(seconds: 0));
             } else {
-              var p = _controller.value.position - Duration(seconds: 10);
+              var p = _controller.value.position - const Duration(seconds: 10);
               _controller.seekTo(p);
             }
           },

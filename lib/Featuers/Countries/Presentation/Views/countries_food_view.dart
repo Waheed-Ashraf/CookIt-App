@@ -1,24 +1,27 @@
 import 'package:cook_it_app/Core/utils/service_locator.dart';
+import 'package:cook_it_app/Core/utils/text_style.dart';
 import 'package:cook_it_app/Core/widgets/custom_error_widget.dart';
+import 'package:cook_it_app/Core/widgets/custom_loading_indicator.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Manager/EgyptionFood/egyption_food_cubit.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/Widgets/meal_item.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/meal_details_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SeeMoreView extends StatelessWidget {
-  const SeeMoreView({super.key});
+class CountriesFoodView extends StatelessWidget {
+  final String countryName;
+  const CountriesFoodView({super.key, required this.countryName});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) =>
-          getIt<EgyptionFoodCubit>()..getEgyptionFoodList('Egyptian'),
+          getIt<EgyptionFoodCubit>()..getEgyptionFoodList(countryName),
       child: Scaffold(
         appBar: AppBar(
             backgroundColor: Theme.of(context).colorScheme.primary,
             title: Text(
-              'Egyption Food',
+              countryName,
               style: TextStyle(
                   color: Theme.of(context).colorScheme.inversePrimary),
             )),
@@ -56,7 +59,8 @@ class SeeMoreView extends StatelessWidget {
             } else if (state is EgyptionFoodError) {
               return CustomErrorWidget(errMessage: state.errorMessage);
             } else {
-              return const SizedBox();
+              return CustomLoadingIndicator(
+                  hight: MediaQuery.of(context).size.height);
             }
           },
         ),

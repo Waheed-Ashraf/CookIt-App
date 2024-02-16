@@ -76,11 +76,13 @@ class AllMealDetails extends StatelessWidget {
                       color: Theme.of(context).colorScheme.inversePrimary,
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8),
-                    child: YoutubeVideoPlayer(
-                        mealVideoUrl: state.mealDetails.strYoutube!),
-                  )
+                  const Divider(
+                    thickness: .7,
+                    height: 24,
+                  ),
+                  YoutubeVideoPlayer(
+                      mealVideoUrl: state.mealDetails.strYoutube ??
+                          "there is no vieo to display")
                 ],
               ),
             ),

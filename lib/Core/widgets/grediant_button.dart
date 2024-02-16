@@ -1,26 +1,32 @@
-import 'package:cook_it_app/constent.dart';
 import 'package:flutter/material.dart';
 
 class GradientButton extends StatelessWidget {
   final String text;
+  TextStyle? textStyle;
+  Color? primaryColor;
+  double? borderRadius;
+  Color? secondaryColor;
+
   final Function() onPressed;
-  const GradientButton(
-      {required this.text, required this.onPressed, super.key});
+  GradientButton({
+    this.secondaryColor,
+    this.borderRadius,
+    required this.text,
+    required this.onPressed,
+    this.textStyle,
+    this.primaryColor,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    Color primaryColor = Theme.of(context).colorScheme.secondary;
-    Color secondaryColor = Colors.white;
-
-    const double borderRadius = 16;
-
     return DecoratedBox(
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(borderRadius),
-          gradient: LinearGradient(
-              colors: [secondaryColor, primaryColor],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter)),
+          borderRadius: BorderRadius.circular(borderRadius ?? 16),
+          gradient: LinearGradient(colors: [
+            secondaryColor ?? Colors.white,
+            primaryColor ?? Theme.of(context).colorScheme.secondary
+          ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
       child: ElevatedButton(
         style: ButtonStyle(
           elevation: MaterialStateProperty.all(0),
@@ -30,13 +36,14 @@ class GradientButton extends StatelessWidget {
           backgroundColor: MaterialStateProperty.all(Colors.transparent),
           shape: MaterialStateProperty.all(
             RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(borderRadius)),
+                borderRadius: BorderRadius.circular(borderRadius ?? 16)),
           ),
         ),
         onPressed: onPressed,
         child: Text(
           text,
-          style: const TextStyle(color: Colors.white, fontSize: 16),
+          style:
+              textStyle ?? const TextStyle(color: Colors.white, fontSize: 16),
         ),
       ),
     );

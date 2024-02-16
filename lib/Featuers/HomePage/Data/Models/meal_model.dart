@@ -27,7 +27,7 @@ class MealsModel extends Equatable {
       strArea: json['strArea'],
       strInstructions: json['strInstructions'],
       strMealThumb: json['strMealThumb'],
-      strYoutube: json['strYoutube'],
+      strYoutube: json['strYoutube'] ?? 'there is no Video to display',
     );
   }
 
