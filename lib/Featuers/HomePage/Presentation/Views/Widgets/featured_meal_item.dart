@@ -54,7 +54,7 @@ class FeaturedMealItem extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 16),
             child: Text(
-              mealsModel.strMeal,
+              mealsModel.strMeal!,
               maxLines: 1,
               style: Styles.textStyle16.copyWith(
                   color: Theme.of(context).colorScheme.inversePrimary),

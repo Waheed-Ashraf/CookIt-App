@@ -1,8 +1,8 @@
 import 'package:equatable/equatable.dart';
 
 class MealsModel extends Equatable {
-  String idMeal;
-  String strMeal;
+  String? idMeal;
+  String? strMeal;
   String? strCategory;
   String? strArea;
   String? strInstructions;
@@ -10,8 +10,8 @@ class MealsModel extends Equatable {
   String? strYoutube;
 
   MealsModel({
-    required this.idMeal,
-    required this.strMeal,
+    this.idMeal,
+    this.strMeal,
     this.strCategory,
     this.strArea,
     this.strInstructions,

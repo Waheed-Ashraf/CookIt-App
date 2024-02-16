@@ -60,7 +60,7 @@ class MealItem extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 8),
               child: Text(
-                mealsModel.strMeal,
+                mealsModel.strMeal!,
                 maxLines: 1,
                 style: Styles.textStyle14.copyWith(
                   color: Theme.of(context).colorScheme.inversePrimary,

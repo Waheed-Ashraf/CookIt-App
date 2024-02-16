@@ -1,5 +1,4 @@
 import 'package:cook_it_app/Core/utils/service_locator.dart';
-import 'package:cook_it_app/Core/utils/text_style.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Manager/EgyptionFood/egyption_food_cubit.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Manager/FeaturedMealsCubit/featured_meals_cubit.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/Widgets/egyption_food_List.dart';
@@ -20,7 +19,7 @@ class HomeViewBody extends StatelessWidget {
           ),
           BlocProvider(
             create: (context) =>
-                getIt<EgyptionFoodCubit>()..getEgyptionFoodList(),
+                getIt<EgyptionFoodCubit>()..getEgyptionFoodList("Egyptian"),
           ),
         ],
         child: const SafeArea(

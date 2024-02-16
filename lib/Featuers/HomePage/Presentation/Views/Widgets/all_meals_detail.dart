@@ -25,7 +25,7 @@ class AllMealDetails extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    state.mealDetails.strMeal,
+                    state.mealDetails.strMeal!,
                     style: Styles.textStyle20.copyWith(
                       color: Theme.of(context).colorScheme.inversePrimary,
                     ),

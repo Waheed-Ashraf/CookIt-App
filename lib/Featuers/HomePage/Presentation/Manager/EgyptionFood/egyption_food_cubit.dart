@@ -9,8 +9,8 @@ class EgyptionFoodCubit extends Cubit<EgyptionFoodState> {
   final Repo repo;
   EgyptionFoodCubit(this.repo) : super(EgyptionFoodInitial());
 
-  Future getEgyptionFoodList() async {
-    var result = await repo.getEgyptianMeals();
+  Future getEgyptionFoodList(String countryName) async {
+    var result = await repo.getEgyptianMeals(countryName);
     result.fold(
         (failure) => emit(EgyptionFoodError(errorMessage: failure.errMessage)),
         (egyptionFoodList) =>

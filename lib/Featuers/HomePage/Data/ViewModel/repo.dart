@@ -4,6 +4,7 @@ import 'package:dartz/dartz.dart';
 
 abstract class Repo {
   Future<Either<Failure, List<MealsModel>>> getFeaturedMeals();
-  Future<Either<Failure, List<MealsModel>>> getEgyptianMeals();
+  Future<Either<Failure, List<MealsModel>>> getEgyptianMeals(
+      String countryName);
   Future<Either<Failure, MealsModel>> getMealDetails(String mealId);
 }

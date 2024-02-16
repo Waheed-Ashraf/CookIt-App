@@ -34,7 +34,7 @@ class FeaturedMealSwiper extends StatelessWidget {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) => MealDetailsView(
-                          mealId: state.featuredMealsList[index].idMeal,
+                          mealId: state.featuredMealsList[index].idMeal!,
                         ),
                       ),
                     );

@@ -10,9 +10,11 @@ class RepoImp implements Repo {
 
   RepoImp(this.apiService);
   @override
-  Future<Either<Failure, List<MealsModel>>> getEgyptianMeals() async {
+  Future<Either<Failure, List<MealsModel>>> getEgyptianMeals(
+      String countryName) async {
     try {
-      var response = await apiService.get(endPoint: 'filter.php?a=Egyptian');
+      var response =
+          await apiService.get(endPoint: 'filter.php?a=$countryName');
 
       List<MealsModel> egyptionMealsList = [];
       for (var element in response['meals']) {

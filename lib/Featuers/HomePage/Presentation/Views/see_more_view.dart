@@ -12,7 +12,8 @@ class SeeMoreView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => getIt<EgyptionFoodCubit>()..getEgyptionFoodList(),
+      create: (context) =>
+          getIt<EgyptionFoodCubit>()..getEgyptionFoodList('Egyptian'),
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Egyption Food'),
@@ -39,7 +40,7 @@ class SeeMoreView extends StatelessWidget {
                             MaterialPageRoute(
                               builder: (context) => MealDetailsView(
                                   mealId:
-                                      state.egyptionMealsList[index].idMeal),
+                                      state.egyptionMealsList[index].idMeal!),
                             ),
                           );
                         },

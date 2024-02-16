@@ -74,7 +74,7 @@ class EgyptionFoodList extends StatelessWidget {
                             MaterialPageRoute(
                               builder: (context) => MealDetailsView(
                                   mealId:
-                                      state.egyptionMealsList[index].idMeal),
+                                      state.egyptionMealsList[index].idMeal!),
                             ),
                           );
                         },
