@@ -44,6 +44,7 @@ dependencies:
   go_router: ^13.2.0
   google_fonts: ^6.1.0
   google_nav_bar: ^5.0.6
+  lottie: ^3.0.0
   shimmer: ^3.0.0
   url_launcher: ^6.2.4
   youtube_player_flutter: ^8.1.2

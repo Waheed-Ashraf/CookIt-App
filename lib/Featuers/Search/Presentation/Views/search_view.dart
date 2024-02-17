@@ -4,6 +4,7 @@ import 'package:cook_it_app/Featuers/Search/Presentation/Manager/Button_cubit/bu
 import 'package:cook_it_app/Featuers/Search/Presentation/Manager/FilterCubit/filter_cubit.dart';
 import 'package:cook_it_app/Featuers/Search/Presentation/Views/Widgets/custom_search_textfield.dart';
 import 'package:cook_it_app/Featuers/Search/Presentation/Views/Widgets/search_filters_section.dart';
+import 'package:cook_it_app/Featuers/Search/Presentation/Views/Widgets/search_result.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -25,32 +26,35 @@ class SearchView extends StatelessWidget {
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                CustomSearchTextField(
-                  outlineBorderColor:
-                      Theme.of(context).colorScheme.inversePrimary,
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  'Search Filters : ',
-                  style: Styles.textStyle16.copyWith(
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CustomSearchTextField(
+                    outlineBorderColor:
+                        Theme.of(context).colorScheme.inversePrimary,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'Search Filters : ',
+                    style: Styles.textStyle16.copyWith(
+                      color: Theme.of(context).colorScheme.inversePrimary,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 8,
+                  ),
+                  const SearchFiltersSection(),
+                  Divider(
+                    thickness: .7,
+                    height: 10,
                     color: Theme.of(context).colorScheme.inversePrimary,
                   ),
-                ),
-                const SizedBox(
-                  height: 8,
-                ),
-                const SearchFiltersSection(),
-                Divider(
-                  thickness: .7,
-                  height: 10,
-                  color: Theme.of(context).colorScheme.inversePrimary,
-                ),
-              ],
+                  const SearchResult(),
+                ],
+              ),
             ),
           ),
         ),

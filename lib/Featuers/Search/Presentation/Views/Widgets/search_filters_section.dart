@@ -1,5 +1,7 @@
 import 'package:cook_it_app/Featuers/Search/Presentation/Manager/Button_cubit/button_cubit.dart';
+import 'package:cook_it_app/Featuers/Search/Presentation/Manager/FilterCubit/filter_cubit.dart';
 import 'package:cook_it_app/Featuers/Search/Presentation/Views/Widgets/custom_button.dart';
+import 'package:cook_it_app/Featuers/Search/Presentation/Views/Widgets/custom_search_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -14,6 +16,8 @@ class SearchFiltersSection extends StatelessWidget {
         CustomButton(
           onPressed: () {
             BlocProvider.of<ButtonCubit>(context).changeButton(0);
+            BlocProvider.of<FilterCubit>(context)
+                .getMealsByNameList(myController.text);
           },
           index: 0,
           text: 'Meal Name',

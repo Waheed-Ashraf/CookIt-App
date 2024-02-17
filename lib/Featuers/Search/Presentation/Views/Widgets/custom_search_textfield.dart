@@ -8,7 +8,6 @@ class CustomSearchTextField extends StatelessWidget {
     super.key,
     required this.outlineBorderColor,
   });
-  final myController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -54,3 +53,5 @@ class CustomSearchTextField extends StatelessWidget {
     );
   }
 }
+
+final myController = TextEditingController();

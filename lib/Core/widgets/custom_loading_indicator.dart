@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class CustomLoadingIndicator extends StatelessWidget {
   const CustomLoadingIndicator({super.key, required this.hight});
@@ -9,9 +10,7 @@ class CustomLoadingIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: MediaQuery.of(context).size.height * hight,
-      child: const Center(
-        child: CircularProgressIndicator(),
-      ),
+      child: Center(child: Lottie.asset('assets/loading_animation.json')),
     );
   }
 }
