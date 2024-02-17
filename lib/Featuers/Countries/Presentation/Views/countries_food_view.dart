@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:cook_it_app/Core/utils/service_locator.dart';
 import 'package:cook_it_app/Core/utils/text_style.dart';
 import 'package:cook_it_app/Core/widgets/custom_error_widget.dart';
@@ -30,30 +31,34 @@ class CountriesFoodView extends StatelessWidget {
             if (state is EgyptionFoodLoaded) {
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: GridView.builder(
-                  itemCount: state.egyptionMealsList.length,
-                  physics: const BouncingScrollPhysics(),
-                  clipBehavior: Clip.none,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 20,
-                    mainAxisSpacing: 3,
-                    childAspectRatio: 4 / 6,
+                child: FadeInUp(
+                  duration: const Duration(seconds: 1),
+                  child: GridView.builder(
+                    itemCount: state.egyptionMealsList.length,
+                    physics: const BouncingScrollPhysics(),
+                    clipBehavior: Clip.none,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 20,
+                      mainAxisSpacing: 3,
+                      childAspectRatio: 4 / 6,
+                    ),
+                    itemBuilder: (context, index) {
+                      return InkWell(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => MealDetailsView(
+                                    mealId:
+                                        state.egyptionMealsList[index].idMeal!),
+                              ),
+                            );
+                          },
+                          child: MealItem(
+                              mealsModel: state.egyptionMealsList[index]));
+                    },
                   ),
-                  itemBuilder: (context, index) {
-                    return InkWell(
-                        onTap: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => MealDetailsView(
-                                  mealId:
-                                      state.egyptionMealsList[index].idMeal!),
-                            ),
-                          );
-                        },
-                        child: MealItem(
-                            mealsModel: state.egyptionMealsList[index]));
-                  },
                 ),
               );
             } else if (state is EgyptionFoodError) {

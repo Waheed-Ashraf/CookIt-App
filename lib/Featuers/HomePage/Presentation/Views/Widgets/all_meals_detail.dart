@@ -18,7 +18,7 @@ class AllMealDetails extends StatelessWidget {
         if (state is MealDetailsLoaded) {
           return FadeInUp(
             from: 20,
-            duration: const Duration(milliseconds: 500),
+            duration: const Duration(seconds: 1),
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
