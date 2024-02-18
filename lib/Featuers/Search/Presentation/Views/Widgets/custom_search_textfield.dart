@@ -1,10 +1,12 @@
 import 'package:cook_it_app/Core/utils/text_style.dart';
+import 'package:cook_it_app/Featuers/Search/Presentation/Manager/FilterCubit/filter_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomSearchTextField extends StatelessWidget {
   final Color outlineBorderColor;
-  CustomSearchTextField({
+  const CustomSearchTextField({
     super.key,
     required this.outlineBorderColor,
   });
@@ -27,7 +29,10 @@ class CustomSearchTextField extends StatelessWidget {
         suffixIcon: Padding(
           padding: const EdgeInsets.only(right: 8),
           child: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              BlocProvider.of<FilterCubit>(context)
+                  .getMealsByFirstLitterList(myController.text);
+            },
             icon: Opacity(
               opacity: .8,
               child: Icon(

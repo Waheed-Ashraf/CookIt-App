@@ -79,6 +79,8 @@ class MealItem extends StatelessWidget {
               padding: const EdgeInsets.only(left: 8),
               child: Text(
                 'Category: ${mealsModel.strCategory}',
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
                 style: Styles.textStyle14.copyWith(
                   color: Theme.of(context).colorScheme.inversePrimary,
                 ),

@@ -9,8 +9,10 @@ class CustomLoadingIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * hight,
-      child: Center(child: Lottie.asset('assets/loading_animation.json')),
+      height: hight,
+      child: Center(
+          child: Lottie.asset('assets/loading_animation.json',
+              width: 100, height: 100, fit: BoxFit.contain)),
     );
   }
 }

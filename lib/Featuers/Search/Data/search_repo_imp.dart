@@ -68,4 +68,24 @@ class SearchRepoImp implements SearchRepo {
       }
     }
   }
+
+  @override
+  Future<Either<Failure, List<MealsModel>>> getMealsByFirstLitter(
+      String mealFirstLitter) async {
+    try {
+      var response =
+          await apiService.get(endPoint: "search.php?f=$mealFirstLitter");
+      List<MealsModel> mealsByFirstLitterList = [];
+      for (var element in response['meals']) {
+        mealsByFirstLitterList.add(MealsModel.fromJson(element));
+      }
+      return right(mealsByFirstLitterList);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      } else {
+        return left(ServerFailure(e.toString()));
+      }
+    }
+  }
 }

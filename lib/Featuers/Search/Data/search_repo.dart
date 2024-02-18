@@ -8,4 +8,6 @@ abstract class SearchRepo {
       String mealCategory);
   Future<Either<Failure, List<MealsModel>>> getMealsByIngredient(
       String mealIngredient);
+  Future<Either<Failure, List<MealsModel>>> getMealsByFirstLitter(
+      String mealFirstLitter);
 }

@@ -25,6 +25,8 @@ class SearchFiltersSection extends StatelessWidget {
         CustomButton(
           onPressed: () {
             BlocProvider.of<ButtonCubit>(context).changeButton(1);
+            BlocProvider.of<FilterCubit>(context)
+                .getMealsByCategoryList(myController.text);
           },
           index: 1,
           text: 'Meal Category',
@@ -32,6 +34,8 @@ class SearchFiltersSection extends StatelessWidget {
         CustomButton(
           onPressed: () {
             BlocProvider.of<ButtonCubit>(context).changeButton(2);
+            BlocProvider.of<FilterCubit>(context)
+                .getMealsByIngredientList(myController.text);
           },
           index: 2,
           text: "Meal Ingredient",

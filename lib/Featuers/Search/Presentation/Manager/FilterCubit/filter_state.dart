@@ -16,46 +16,31 @@ final class FilterMealNameLoaded extends FilterState {
   const FilterMealNameLoaded({required this.mealsByNameList});
 }
 
-final class FilterMealNameError extends FilterState {
-  final String errorMessage;
+final class SearchByFirstLitterLoaded extends FilterState {
+  final List<MealsModel> mealsByFirstLitterList;
 
-  const FilterMealNameError({
-    required this.errorMessage,
-  });
+  const SearchByFirstLitterLoaded({required this.mealsByFirstLitterList});
 }
 
-final class FilterMealNameLoading extends FilterState {}
+final class FilterLoading extends FilterState {}
 
-final class FilterMealNameEmpty extends FilterState {}
+final class FilterEmpty extends FilterState {}
 
 //=========================================================
 
-final class FilterMealCategoryLoaded extends FilterState {}
+final class FilterMealCategoryLoaded extends FilterState {
+  final List<MealsModel> mealsByCategry;
 
-final class FilterMealCategoryError extends FilterState {
-  final String errorMessage;
-
-  const FilterMealCategoryError({required this.errorMessage});
+  const FilterMealCategoryLoaded({required this.mealsByCategry});
 }
-
-final class FilterMealCategoryLoading extends FilterState {}
-
-final class FilterMealCategoryEmpty extends FilterState {}
 
 //=============================================================
 
 final class FilterMealIngredientLoaded extends FilterState {
-  final List<MealsModel> mealsByNameList;
+  final List<MealsModel> mealsByIngredientList;
 
-  const FilterMealIngredientLoaded({required this.mealsByNameList});
+  const FilterMealIngredientLoaded({required this.mealsByIngredientList});
 }
 
-final class FilterMealIngredientError extends FilterState {
-  final String errorMessage;
 
-  const FilterMealIngredientError({required this.errorMessage});
-}
-
-final class FilterMealIngredientLoading extends FilterState {}
-
-final class FilterMealIngredientEmpty extends FilterState {}
+//==============================================
