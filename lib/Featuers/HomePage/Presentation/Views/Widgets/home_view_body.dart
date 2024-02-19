@@ -22,19 +22,32 @@ class HomeViewBody extends StatelessWidget {
                 getIt<EgyptionFoodCubit>()..getEgyptionFoodList("Egyptian"),
           ),
         ],
-        child: const SafeArea(
-            child: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              FeaturedMealSwiper(),
-              SizedBox(
-                height: 16,
-              ),
-              EgyptionFoodList(),
-            ],
+        child: Scaffold(
+          floatingActionButton: FloatingActionButton(
+            backgroundColor: Theme.of(context).colorScheme.primary,
+            tooltip: 'Get Random Meal',
+            onPressed: () {},
+            child: Image.asset(
+              "assets/surprise-box.png",
+              width: 35,
+              fit: BoxFit.contain,
+            ),
           ),
-        )));
+          body: const SafeArea(
+            child: SingleChildScrollView(
+              physics: BouncingScrollPhysics(),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  FeaturedMealSwiper(),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  EgyptionFoodList(),
+                ],
+              ),
+            ),
+          ),
+        ));
   }
 }

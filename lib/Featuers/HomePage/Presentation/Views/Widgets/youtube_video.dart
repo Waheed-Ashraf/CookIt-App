@@ -20,7 +20,7 @@ class _YoutubeVideoPlayerState extends State<YoutubeVideoPlayer> {
   void initState() {
     super.initState();
     isMute = false;
-    id = YoutubePlayer.convertUrlToId(url) ?? "";
+    id = YoutubePlayer.convertUrlToId(url)!;
     _controller = YoutubePlayerController(
       initialVideoId: id,
       flags: const YoutubePlayerFlags(autoPlay: false),
@@ -58,8 +58,9 @@ class _YoutubeVideoPlayerState extends State<YoutubeVideoPlayer> {
               _controller.seekTo(p);
             }
           },
-          icon: const Icon(
+          icon: Icon(
             Icons.first_page,
+            color: Theme.of(context).colorScheme.inversePrimary,
           ),
           iconSize: size,
         ),
@@ -74,15 +75,24 @@ class _YoutubeVideoPlayerState extends State<YoutubeVideoPlayer> {
               isPlaying = !isPlaying;
             });
           },
-          icon: isPlaying ? const Icon(Icons.pause) : Icon(Icons.play_arrow),
+          icon: isPlaying
+              ? const Icon(Icons.pause)
+              : Icon(
+                  Icons.play_arrow,
+                  color: Theme.of(context).colorScheme.inversePrimary,
+                ),
           iconSize: size,
         ),
         IconButton(
           onPressed: () {
-            var newPostion = _controller.value.position + Duration(seconds: 10);
+            var newPostion =
+                _controller.value.position + const Duration(seconds: 10);
             _controller.seekTo(newPostion);
           },
-          icon: const Icon(Icons.last_page),
+          icon: Icon(
+            Icons.last_page,
+            color: Theme.of(context).colorScheme.inversePrimary,
+          ),
           iconSize: size,
         ),
       ],
