@@ -20,7 +20,7 @@ class _YoutubeVideoPlayerState extends State<YoutubeVideoPlayer> {
   void initState() {
     super.initState();
     isMute = false;
-    id = YoutubePlayer.convertUrlToId(url) ?? '';
+    id = YoutubePlayer.convertUrlToId(url) ?? "";
     _controller = YoutubePlayerController(
       initialVideoId: id,
       flags: const YoutubePlayerFlags(autoPlay: false),
