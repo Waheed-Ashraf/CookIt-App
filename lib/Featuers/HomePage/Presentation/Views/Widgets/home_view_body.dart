@@ -1,8 +1,10 @@
 import 'package:cook_it_app/Core/utils/service_locator.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Manager/EgyptionFood/egyption_food_cubit.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Manager/FeaturedMealsCubit/featured_meals_cubit.dart';
+import 'package:cook_it_app/Featuers/HomePage/Presentation/Manager/RandomMeal/random_meal_cubit.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/Widgets/egyption_food_List.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/Widgets/featured_meals_swiper.dart';
+import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/random_meal_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -27,7 +29,14 @@ class HomeViewBody extends StatelessWidget {
             backgroundColor:
                 Theme.of(context).colorScheme.primary.withOpacity(.7),
             tooltip: 'Get Random Meal',
-            onPressed: () {},
+            onPressed: () {
+              BlocProvider.of<RandomMealCubit>(context).getRandomMeal();
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const RondomMealView(),
+                ),
+              );
+            },
             child: Image.asset(
               "assets/surprise-box.png",
               width: 35,

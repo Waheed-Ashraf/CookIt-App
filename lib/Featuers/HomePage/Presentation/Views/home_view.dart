@@ -1,3 +1,4 @@
+import 'package:cook_it_app/Core/utils/service_locator.dart';
 import 'package:cook_it_app/Core/widgets/custom_bottom_navbar.dart';
 import 'package:cook_it_app/Featuers/Countries/Presentation/Views/countries_view.dart';
 import 'package:cook_it_app/Featuers/Favorit/presentation/Views/favorit_view.dart';

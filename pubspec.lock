@@ -240,6 +240,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "10.7.0"
+  font_awesome_icon_class:
+    dependency: "direct main"
+    description:
+      name: font_awesome_icon_class
+      sha256: "48d1999cebba4cef2b9f824a51c28edc5bf1fcb7be81487edf609e6682a3405b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.6"
   get_it:
     dependency: "direct main"
     description:

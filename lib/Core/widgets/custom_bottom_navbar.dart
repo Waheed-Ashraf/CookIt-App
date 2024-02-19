@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
@@ -24,20 +25,24 @@ class CustomBottomNavBar extends StatelessWidget {
           tabActiveBorder: Border.all(color: Colors.white),
           tabs: const [
             GButton(
-              icon: Icons.home,
-              text: 'Home',
+              icon: FontAwesomeIcons.house,
+              text: ' Home',
+              iconSize: 20,
             ),
             GButton(
-              icon: Icons.search,
-              text: 'Search',
+              icon: FontAwesomeIcons.magnifyingGlass,
+              text: ' Search',
+              iconSize: 20,
             ),
             GButton(
               icon: Icons.favorite,
-              text: 'Favo',
+              text: ' Favo',
+              iconSize: 20,
             ),
             GButton(
-              icon: Icons.landscape,
-              text: 'Country',
+              icon: FontAwesomeIcons.earthAfrica,
+              text: ' Country',
+              iconSize: 20,
             ),
           ]),
     );

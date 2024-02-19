@@ -5,6 +5,7 @@ import 'package:cook_it_app/Featuers/Countries/Presentation/Manager/CountriesNam
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Manager/EgyptionFood/egyption_food_cubit.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Manager/FeaturedMealsCubit/featured_meals_cubit.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Manager/MealDetailsCubit/meal_details_cubit.dart';
+import 'package:cook_it_app/Featuers/HomePage/Presentation/Manager/RandomMeal/random_meal_cubit.dart';
 import 'package:cook_it_app/Featuers/Search/Data/search_repo.dart';
 import 'package:cook_it_app/Featuers/Search/Data/search_repo_imp.dart';
 import 'package:cook_it_app/Featuers/Search/Presentation/Manager/FilterCubit/filter_cubit.dart';
@@ -22,6 +23,7 @@ void serviceLocator() {
   getIt.registerFactory<MealDetailsCubit>(() => MealDetailsCubit(getIt()));
   getIt.registerFactory<CountriesNameCubit>(() => CountriesNameCubit(getIt()));
   getIt.registerFactory<FilterCubit>(() => FilterCubit(getIt()));
+  getIt.registerFactory<RandomMealCubit>(() => RandomMealCubit(getIt()));
 
   //Repo
   getIt.registerLazySingleton<Repo>(() => RepoImp(getIt()));

@@ -6,18 +6,18 @@ class BookMarkWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 40,
-      height: 40,
+      width: 30,
+      height: 30,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           color: Colors.grey.shade300.withOpacity(.5)),
       child: IconButton(
           padding: EdgeInsets.zero,
           onPressed: () {},
-          icon: Icon(
-            Icons.favorite,
+          icon: const Icon(
+            Icons.favorite_outline,
             size: 20,
-            color: Theme.of(context).colorScheme.secondary,
+            color: Colors.black,
           )),
     );
   }

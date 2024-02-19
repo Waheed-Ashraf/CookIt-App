@@ -1,7 +1,9 @@
 import 'package:cook_it_app/Core/theme/app_theme.dart';
 import 'package:cook_it_app/Core/utils/service_locator.dart';
+import 'package:cook_it_app/Featuers/HomePage/Presentation/Manager/RandomMeal/random_meal_cubit.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/home_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   serviceLocator();
@@ -13,10 +15,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: darkMood,
-      home: const HomeView(),
+    return BlocProvider(
+      create: (context) => getIt<RandomMealCubit>(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: darkMood,
+        home: const HomeView(),
+      ),
     );
   }
 }
