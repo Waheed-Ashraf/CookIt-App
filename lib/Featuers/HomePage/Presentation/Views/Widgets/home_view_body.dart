@@ -24,7 +24,8 @@ class HomeViewBody extends StatelessWidget {
         ],
         child: Scaffold(
           floatingActionButton: FloatingActionButton(
-            backgroundColor: Theme.of(context).colorScheme.primary,
+            backgroundColor:
+                Theme.of(context).colorScheme.primary.withOpacity(.7),
             tooltip: 'Get Random Meal',
             onPressed: () {},
             child: Image.asset(

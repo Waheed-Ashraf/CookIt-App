@@ -53,7 +53,6 @@ class RepoImp implements Repo {
   Future<Either<Failure, MealsModel>> getMealDetails(String mealId) async {
     try {
       var response = await apiService.get(endPoint: 'lookup.php?i=$mealId');
-      // MealsModel mealDetails = response['meals'];
 
       return right(MealsModel.fromJson(response['meals'][0]));
     } catch (e) {
@@ -75,6 +74,21 @@ class RepoImp implements Repo {
         countriesNameList.add(MealsModel.fromJson(element));
       }
       return right(countriesNameList);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      } else {
+        return left(ServerFailure(e.toString()));
+      }
+    }
+  }
+
+  @override
+  Future<Either<Failure, MealsModel>> getRandomMeal() async {
+    try {
+      var response = await apiService.get(endPoint: 'random.php');
+
+      return right(MealsModel.fromJson(response['meals'][0]));
     } catch (e) {
       if (e is DioException) {
         return left(ServerFailure.fromDioError(e));

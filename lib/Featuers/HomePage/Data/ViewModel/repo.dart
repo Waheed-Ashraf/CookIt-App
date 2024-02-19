@@ -8,4 +8,5 @@ abstract class Repo {
       String countryName);
   Future<Either<Failure, MealsModel>> getMealDetails(String mealId);
   Future<Either<Failure, List<MealsModel>>> getCountriesNames();
+  Future<Either<Failure, MealsModel>> getRandomMeal();
 }
