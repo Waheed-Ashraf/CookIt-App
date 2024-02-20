@@ -13,6 +13,14 @@ class HomeDrower extends StatefulWidget {
 }
 
 class _HomeDrowerState extends State<HomeDrower> {
+  bool isToggleOn = false;
+
+  void _toggle() {
+    setState(() {
+      isToggleOn = !isToggleOn;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -22,19 +30,54 @@ class _HomeDrowerState extends State<HomeDrower> {
         children: [
           SizedBox(
             height: MediaQuery.of(context).size.height * .4,
-            child: const DrawerHeader(
+            child: DrawerHeader(
               decoration: BoxDecoration(
-                  // color: Colors.blue,
                   image: DecorationImage(
-                      image: AssetImage("assets/dark.jpg"), fit: BoxFit.cover)),
-              child: Text('Drawer Header'),
+                      fit: BoxFit.cover,
+                      image: isToggleOn
+                          ? const AssetImage(
+                              "assets/dark.jpg",
+                            )
+                          : const AssetImage(
+                              "assets/light.jpg",
+                            ))),
+              child: const Text('Drawer Header'),
             ),
           ),
-          IconButton(
-              onPressed: () {
-                BlocProvider.of<ThemesCubit>(context).toggleTheme();
-              },
-              icon: const Icon(FontAwesomeIcons.toggleOff)),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Dark Theme',
+                    style: Styles.textStyle16.copyWith(
+                      color: Theme.of(context).colorScheme.inversePrimary,
+                    )),
+                IconButton(
+                  padding: EdgeInsets.zero,
+                  icon: isToggleOn
+                      ? const Icon(
+                          FontAwesomeIcons.toggleOff,
+                          color: Colors.white,
+                          size: 30,
+                        )
+                      : const Icon(
+                          FontAwesomeIcons.toggleOn,
+                          color: Colors.black,
+                          size: 30,
+                        ),
+                  onPressed: () {
+                    _toggle();
+                    BlocProvider.of<ThemesCubit>(context).toggleTheme();
+                  },
+                ),
+                Text('Light Theme',
+                    style: Styles.textStyle16.copyWith(
+                      color: Theme.of(context).colorScheme.inversePrimary,
+                    )),
+              ],
+            ),
+          ),
           Divider(
             height: 8,
             thickness: .7,

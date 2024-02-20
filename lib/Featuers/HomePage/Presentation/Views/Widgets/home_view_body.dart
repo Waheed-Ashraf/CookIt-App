@@ -8,9 +8,6 @@ import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/Widgets/home_dr
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/random_meal_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:url_launcher/url_launcher.dart';
-
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
