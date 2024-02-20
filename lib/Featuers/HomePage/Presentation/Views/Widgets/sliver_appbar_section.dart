@@ -4,11 +4,12 @@ import 'package:cook_it_app/Core/widgets/custom_error_widget.dart';
 import 'package:cook_it_app/Core/widgets/custom_loading_indicator.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Manager/MealDetailsCubit/meal_details_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SliverAppBarSection extends StatelessWidget {
-  const SliverAppBarSection({super.key});
+  const SliverAppBarSection({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,7 @@ class SliverAppBarSection extends StatelessWidget {
           child: BlocBuilder<MealDetailsCubit, MealDetailsState>(
             builder: (context, state) {
               if (state is MealDetailsLoaded) {
-                return Container(
+                return SizedBox(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height * .5,
                   child: CachedNetworkImage(
@@ -46,9 +47,8 @@ class SliverAppBarSection extends StatelessWidget {
               } else if (state is MealDetailsError) {
                 return CustomErrorWidget(errMessage: state.errorMessage);
               } else {
-                return SizedBox(
-                  height: MediaQuery.of(context).size.height * .5,
-                );
+                return CustomLoadingIndicator(
+                    hight: MediaQuery.of(context).size.height * .5);
               }
             },
           ),

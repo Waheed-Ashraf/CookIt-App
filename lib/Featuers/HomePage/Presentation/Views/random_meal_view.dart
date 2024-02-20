@@ -1,4 +1,3 @@
-
 import 'package:cook_it_app/Core/widgets/custom_error_widget.dart';
 import 'package:cook_it_app/Core/widgets/custom_loading_indicator.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Manager/RandomMeal/random_meal_cubit.dart';
@@ -14,7 +13,9 @@ class RondomMealView extends StatelessWidget {
     return BlocBuilder<RandomMealCubit, RandomMealState>(
       builder: (context, state) {
         if (state is RandomMealLoaded) {
-          return MealDetailsView(mealId: state.randomMeal.idMeal!);
+          return MealDetailsView(
+            mealId: state.randomMeal.idMeal!,
+          );
         } else if (state is RandomMealError) {
           return CustomErrorWidget(errMessage: state.errorMessage);
         } else {

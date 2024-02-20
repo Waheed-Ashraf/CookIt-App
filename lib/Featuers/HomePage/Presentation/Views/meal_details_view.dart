@@ -7,7 +7,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MealDetailsView extends StatelessWidget {
   final String mealId;
-  const MealDetailsView({super.key, required this.mealId});
+  const MealDetailsView({
+    super.key,
+    required this.mealId,
+  });
 
   @override
   Widget build(BuildContext context) {
