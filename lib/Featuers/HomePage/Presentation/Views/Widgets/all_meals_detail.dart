@@ -2,7 +2,6 @@ import 'package:animate_do/animate_do.dart';
 import 'package:cook_it_app/Core/utils/text_style.dart';
 import 'package:cook_it_app/Core/widgets/custom_error_widget.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Manager/MealDetailsCubit/meal_details_cubit.dart';
-import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/Widgets/bookmark.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/Widgets/table_of_ingredient.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/Widgets/youtube_video.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +34,6 @@ class AllMealDetails extends StatelessWidget {
                           color: Theme.of(context).colorScheme.inversePrimary,
                         ),
                       ),
-                      const BookMarkWidget(),
                     ],
                   ),
                   Divider(

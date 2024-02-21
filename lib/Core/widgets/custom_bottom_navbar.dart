@@ -35,11 +35,6 @@ class CustomBottomNavBar extends StatelessWidget {
               iconSize: 20,
             ),
             GButton(
-              icon: Icons.favorite,
-              text: ' Favo',
-              iconSize: 20,
-            ),
-            GButton(
               icon: FontAwesomeIcons.earthAfrica,
               text: ' Country',
               iconSize: 20,
