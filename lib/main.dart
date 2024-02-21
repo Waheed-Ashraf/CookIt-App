@@ -3,6 +3,7 @@ import 'package:cook_it_app/Core/utils/service_locator.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Manager/RandomMeal/random_meal_cubit.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Manager/themes_cubit/themes_cubit.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/home_view.dart';
+import 'package:cook_it_app/Featuers/splash/presentation/View/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
             return MaterialApp(
               debugShowCheckedModeBanner: false,
               theme: state.theme,
-              home: const HomeView(),
+              home: const SplashView(),
             );
           },
         ));

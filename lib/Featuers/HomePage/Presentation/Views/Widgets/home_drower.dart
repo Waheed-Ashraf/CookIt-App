@@ -31,18 +31,17 @@ class _HomeDrowerState extends State<HomeDrower> {
           SizedBox(
             height: MediaQuery.of(context).size.height * .4,
             child: DrawerHeader(
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: isToggleOn
-                          ? const AssetImage(
-                              "assets/dark.jpg",
-                            )
-                          : const AssetImage(
-                              "assets/light.jpg",
-                            ))),
-              child: const Text('Drawer Header'),
-            ),
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: isToggleOn
+                            ? const AssetImage(
+                                "assets/dark.jpg",
+                              )
+                            : const AssetImage(
+                                "assets/light.jpg",
+                              ))),
+                child: const SizedBox()),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
