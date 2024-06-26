@@ -1,5 +1,4 @@
 import 'package:cook_it_app/Core/utils/text_style.dart';
-import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/Widgets/home_view_body.dart';
 import 'package:cook_it_app/Featuers/HomePage/Presentation/Views/home_view.dart';
 import 'package:flutter/material.dart';
 
