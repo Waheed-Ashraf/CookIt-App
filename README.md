@@ -9,9 +9,8 @@
 - [Setup and Installation](#setup-and-installation)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
-- [Packages Used](#packages-used)
 - [Contributing](#contributing)
-- [License](#license)
+- [APK Download](#apk-download)
 - [Contact](#contact)
 
 ## Introduction
@@ -57,3 +56,65 @@ To use the CookIt app, follow these steps:
    ```bash
    flutter run
 
+2. **Explore the Home Page:**
+Navigate through the dynamic home page to explore various meals.
+
+3. **Search for Meals:**
+Use the advanced search functionality to find specific meals based on your preferences.
+
+5. **Explore Meals by Country:**
+Browse meals based on different countries to discover unique recipes and dishes.
+
+7. **Toggle Dark Mode:**
+Enable or disable dark mode from the app settings to suit your visual preference.
+
+## Project Structure
+```plaintext
+CookIt-App/
+├── lib/
+│   ├── core/
+│   │   ├── error/
+│   │   ├── theme/
+│   │   ├── utils/
+│   │   └── widget/
+│   ├── feature/
+│   │   ├── countries/
+│   │   │   ├── data/
+│   │   │   └── presentation/
+│   │   ├── homepage/
+│   │   │   ├── data/
+│   │   │   └── presentation/
+│   │   ├── search/
+│   │   │   ├── data/
+│   │   │   └── presentation/
+│   │   └── splash/
+│   │       ├── data/
+│   │       └── presentation/
+│   ├── constants.dart
+│   └── main.dart
+├── test/
+├── .gitignore
+├── pubspec.yaml
+└── README.md
+```
+## Contributing
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (git checkout -b feature/your-feature).
+3. Commit your changes (git commit -m 'Add some feature').
+4. Push to the branch (git push origin feature/your-feature).
+5. Open a pull request.
+   
+## APK Download
+
+You can download the APK file for the Slash App from the following link:
+
+[Slash App APK Download](https://drive.google.com/file/d/10E8iy7iffGEFuXXocpFRMtLfJiEhST4N/view?usp=drive_link)
+
+## Contact
+
+For any questions or suggestions, feel free to contact me:
+
+Email: washraf124@gmail.com
+LinkedIn: [Waheed Ashraf](https://www.linkedin.com/in/waheed-ashraf-18a197214/)
