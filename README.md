@@ -1,7 +1,7 @@
 # CookIt App
 
 ![CookIt Logo](assets/cookItLogo.png)
-![CookIt Screens](https://drive.google.com/file/d/1jHxvhea0p8ZyM5BLeaG0th3TX5FFOrk4/view?usp=sharing)
+![CookIt Screens](assets/cookIt_app_pic_collection.png)
 
 ## Table of Contents
 - [Introduction](#introduction)
