@@ -110,7 +110,7 @@ Contributions are welcome! Please follow these steps:
 
 You can download the APK file for the Slash App from the following link:
 
-[Slash App APK Download](https://drive.google.com/file/d/10E8iy7iffGEFuXXocpFRMtLfJiEhST4N/view?usp=drive_link)
+[CookIt App APK Download](https://drive.google.com/file/d/1jqg6_2hMvWMLKMc02XEjMK0XJLZfz4aH/view?usp=sharing)
 
 ## Contact
 
