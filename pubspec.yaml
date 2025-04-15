@@ -31,7 +31,7 @@ dependencies:
   animate_do: ^3.3.3
   cached_network_image: ^3.3.1
   card_swiper: ^3.0.1
-  carousel_slider: ^4.2.1
+  carousel_slider: ^5.0.0
   cupertino_icons: ^1.0.6
   dartz: ^0.10.1
   dio: ^5.4.0
